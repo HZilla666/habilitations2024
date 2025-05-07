@@ -53,6 +53,8 @@
             this.btnDemandeModifDev = new System.Windows.Forms.Button();
             this.grbLesDeveloppeurs = new System.Windows.Forms.GroupBox();
             this.dgvDeveloppeurs = new System.Windows.Forms.DataGridView();
+            this.cboFiltreProfil = new System.Windows.Forms.ComboBox();
+            this.lblFiltre = new System.Windows.Forms.Label();
             this.grbPwd.SuspendLayout();
             this.grbDeveloppeur.SuspendLayout();
             this.grbLesDeveloppeurs.SuspendLayout();
@@ -288,6 +290,8 @@
             // 
             // grbLesDeveloppeurs
             // 
+            this.grbLesDeveloppeurs.Controls.Add(this.lblFiltre);
+            this.grbLesDeveloppeurs.Controls.Add(this.cboFiltreProfil);
             this.grbLesDeveloppeurs.Controls.Add(this.btnDemandeChangePwd);
             this.grbLesDeveloppeurs.Controls.Add(this.btnDemandeSupprDev);
             this.grbLesDeveloppeurs.Controls.Add(this.btnDemandeModifDev);
@@ -315,6 +319,24 @@
             this.dgvDeveloppeurs.Size = new System.Drawing.Size(581, 206);
             this.dgvDeveloppeurs.TabIndex = 0;
             // 
+            // cboFiltreProfil
+            // 
+            this.cboFiltreProfil.FormattingEnabled = true;
+            this.cboFiltreProfil.Location = new System.Drawing.Point(323, 233);
+            this.cboFiltreProfil.Name = "cboFiltreProfil";
+            this.cboFiltreProfil.Size = new System.Drawing.Size(121, 21);
+            this.cboFiltreProfil.TabIndex = 4;
+            this.cboFiltreProfil.SelectedIndexChanged += new System.EventHandler(this.cboFiltreProfil_SelectedIndexChanged);
+            // 
+            // lblFiltre
+            // 
+            this.lblFiltre.AutoSize = true;
+            this.lblFiltre.Location = new System.Drawing.Point(264, 236);
+            this.lblFiltre.Name = "lblFiltre";
+            this.lblFiltre.Size = new System.Drawing.Size(53, 13);
+            this.lblFiltre.TabIndex = 5;
+            this.lblFiltre.Text = "filtrer par :";
+            // 
             // FrmHabilitations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,6 +352,7 @@
             this.grbDeveloppeur.ResumeLayout(false);
             this.grbDeveloppeur.PerformLayout();
             this.grbLesDeveloppeurs.ResumeLayout(false);
+            this.grbLesDeveloppeurs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeveloppeurs)).EndInit();
             this.ResumeLayout(false);
 
@@ -362,6 +385,8 @@
         private System.Windows.Forms.Button btnDemandeModifDev;
         private System.Windows.Forms.GroupBox grbLesDeveloppeurs;
         private System.Windows.Forms.DataGridView dgvDeveloppeurs;
+        private System.Windows.Forms.ComboBox cboFiltreProfil;
+        private System.Windows.Forms.Label lblFiltre;
     }
 }
 

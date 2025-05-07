@@ -15,7 +15,7 @@ namespace habilitations2024.dal
         /// <summary>
         /// chaine de connexion à la bdd
         /// </summary>
-        private static readonly string connectionString = "server=localhost;user id=habilitations;password=motdepasseuser;database=habilitations;";
+        private static readonly string connectionString = "server=localhost;port=3308;user id=root;database=habilitation;AllowPublicKeyRetrieval=True;";
         /// <summary>
         /// instance unique de la classe
         /// </summary>

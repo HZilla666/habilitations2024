@@ -54,14 +54,16 @@ namespace habilitations2024.view
             RemplirListeProfils();
             EnCourseModifDeveloppeur(false);
             EnCoursModifPwd(false);
+            RemplirListeProfilsFiltre();
         }
 
         /// <summary>
         /// Affiche les développeurs
         /// </summary>
-        private void RemplirListeDeveloppeurs()
+        /// <param name="idprofil">Identifiant du profil utilisé pour filtrer la liste des développeurs (0 par défeut, aucun filtre).</param>
+        private void RemplirListeDeveloppeurs(int idprofil=0)
         {
-            List<Developpeur> lesDeveloppeurs = controller.GetLesDeveloppeurs();
+            List<Developpeur> lesDeveloppeurs = controller.GetLesDeveloppeurs(idprofil);
             bdgDeveloppeurs.DataSource = lesDeveloppeurs;
             dgvDeveloppeurs.DataSource = bdgDeveloppeurs;
             dgvDeveloppeurs.Columns["iddeveloppeur"].Visible = false;
@@ -254,5 +256,25 @@ namespace habilitations2024.view
             txtPwd2.Text = "";
         }
 
+        /// <summary>
+        /// Affiche les profils pour le filtre
+        /// </summary>
+        private void RemplirListeProfilsFiltre()
+        {
+
+            List<Profil> lesProfils = controller.GetLesProfils();
+            // Ajouter une ligne vide en haut
+            lesProfils.Insert(0, new Profil(0, ""));
+            bdgProfils.DataSource = lesProfils;
+            cboFiltreProfil.DataSource = bdgProfils;
+
+        }
+
+
+        private void cboFiltreProfil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RemplirListeDeveloppeurs(cboFiltreProfil.SelectedIndex);
+
+        }
     }
 }
