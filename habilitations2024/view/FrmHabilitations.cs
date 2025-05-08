@@ -270,7 +270,11 @@ namespace habilitations2024.view
 
         }
 
-
+        /// <summary>
+        /// selection d'un filtre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboFiltreProfil_SelectedIndexChanged(object sender, EventArgs e)
         {
             RemplirListeDeveloppeurs(cboFiltreProfil.SelectedIndex);
